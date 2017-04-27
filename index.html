@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BMI</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="js/main.js"></script>
+	</head>
+
+  <body ng-app="bmiApp">
+		<div ng-controller="bmiCtrl" ng-init="calc_bmi()">
+			<label for="rngHeight">Height </label>
+			<input type="range" id="rngHeight" min="1" max="300" ng-change="calc_bmi()" ng-model="height_cm">{{height_m}} m
+			<br />
+			<label for="rngWeight">Weight </label>
+			<input type="range" id="rngWeight" min="1" max="300000" ng-change="calc_bmi()" ng-model="weight_g">{{weight_kg}} kg
+			<h1>Your BMI is {{bmi}}</h1>
+			<p>{{remarks}}</p>
+		</div>
+	</body>
+</html>
